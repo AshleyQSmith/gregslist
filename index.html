@@ -22,12 +22,12 @@
     <main class="container-fluid bg-secondary">
         <div class="row">
             <div class="col-12">
-                <!-- Button trigger modal -->
+                <!-- Button trigger car modal -->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-car-modal">
                     Add Car
                 </button>
 
-                <!-- Modal -->
+                <!-- Car Modal -->
                 <div class="modal fade" id="add-car-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
                     aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -84,10 +84,83 @@
         <div class="row" id="cars">
             <!-- this is where the _drawCars template gets injected -->
         </div>
+
+
+<!-- Ashley's additions -->
+
+<div class="row">
+  <div class="col-12">
+      <!-- Button trigger houses modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-house-modal">
+          Add House
+      </button>
+
+      <!-- House Modal -->
+      <div class="modal fade" id="add-house-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Add House Modal</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form class="container-fluid" onsubmit="app.houseController.create(event)">
+                          <div class="form-group">
+                              <label for="address"></label>
+                              <input type="text" name="address" class="form-control"
+                                  placeholder="Enter Address here..." required>
+                          </div>
+                          <div class="form-group">
+                              <label for="price"></label>
+                              <input type="number" min="0" name="price" class="form-control"
+                                  placeholder="Enter Price here..." required>
+                          </div>
+                          <div class="form-group">
+                              <label for="beds"></label>
+                              <input type="number" min="0" name="beds" class="form-control"
+                                  placeholder="Enter Number of Bedrooms here..." required>
+                          </div>
+                          <div class="form-group">
+                              <label for="baths"></label>
+                              <input type="number" min="0" name="baths" class="form-control"
+                                  placeholder="Enter Number of Bathrooms here..." required>
+                          </div>
+                          <div class="form-group">
+                              <label for="description"></label>
+                              <textarea placeholder="Enter description here..." name="description" cols="30"
+                                  rows="10" maxlength="250"></textarea>
+                          </div>
+                          <div class="form-group">
+                              <label for="imgUrl"></label>
+                              <input type="text" name="imgUrl" class="form-control"
+                                  placeholder="Enter Image Url here..." required>
+                          </div>
+                          <button class="btn-primary btn btn-block" type="submit">Create House</button>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row" id="houses">
+  <!-- this is where the _drawHouses template gets injected -->
+</div>
+
+
+
     </main>
+    
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
