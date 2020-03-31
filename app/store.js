@@ -1,12 +1,14 @@
-import Value from "./Models/Value.js";
 import Car from "./Models/Car.js";
 import House from "./Models/House.js"
+import Job from "./Models/Job.js"
 
 let _state = {
   /** @type {Car[]} */
     cars: [],
   /** @type {House[]} */
     houses: [],
+  /** @type {House[]} */
+    jobs: [],
 };
 
 /** Collection of listeners to be called based on keyed state changes
@@ -15,6 +17,7 @@ let _state = {
 let _listeners = {
   cars: [],
   houses: [],
+  jobs: []
 };
 
 /**

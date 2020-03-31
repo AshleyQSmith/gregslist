@@ -21,7 +21,7 @@
     </header>
     <main class="container-fluid bg-secondary">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 my-3">
                 <!-- Button trigger car modal -->
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-car-modal">
                     Add Car
@@ -86,9 +86,7 @@
         </div>
 
 
-<!-- Ashley's additions -->
-
-<div class="row">
+<div class="row mt-5 mb-3">
   <div class="col-12">
       <!-- Button trigger houses modal -->
       <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-house-modal">
@@ -155,9 +153,78 @@
       </div>
   </div>
 </div>
+
 <div class="row" id="houses">
   <!-- this is where the _drawHouses template gets injected -->
 </div>
+
+
+
+<div class="row mt-5 mb-3">
+    <div class="col-12">
+        <!-- Button trigger jobs modal -->
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#add-job-modal">
+            Add Job
+        </button>
+
+
+      <!-- Job Modal -->
+      <div class="modal fade" id="add-job-modal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h5 class="modal-title">Add Job Modal</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+                  <div class="modal-body">
+                      <form class="container-fluid" onsubmit="app.jobController.create(event)">
+                        <div class="form-group">
+                            <label for="company"></label>
+                            <input type="text" name="company" class="form-control"
+                                placeholder="Enter Company Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="jobTitle"></label>
+                            <input type="text" name="jobTitle" class="form-control"
+                                placeholder="Enter Job Title" required>
+                        </div>
+                          <div class="form-group">
+                              <label for="hours"></label>
+                              <input type="number" min="0" name="hours" class="form-control"
+                                  placeholder="Enter Expexted Hours" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="rate"></label>
+                              <input type="number" min="0" name="rate" class="form-control"
+                                  placeholder="Enter Pay Rate" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="description"></label>
+                              <textarea placeholder="Enter description here..." name="description" cols="30"
+                                  rows="10" maxlength="250"></textarea>
+                          </div>
+                          <button class="btn-primary btn btn-block" type="submit">Create Job</button>
+                      </form>
+                  </div>
+                  <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<div class="row" id="jobs">
+  <!-- this is where the _drawJobs template gets injected -->
+</div>
+
+
+
+
 
 
 

@@ -21,7 +21,7 @@ export default class CarController {
 
 
   create(event) {
-    event.preventDefault() // prevents the page from refreshing
+    event.preventDefault()
     let formData = event.target
     let newCarObject = {
       make: formData.make.value,
