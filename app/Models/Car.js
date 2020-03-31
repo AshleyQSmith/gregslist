@@ -12,10 +12,9 @@ export default class Car {
   get Template() {
     return /*html*/ `
     <div class="col-4 border border-info rounded shadow">
-      <h1>Make: ${this.make}</h1>
-      <h5>Model: ${this.model}</h5>
-      <h5>Year: ${this.year}</h5>
-      <h5>Price: ${this.price}</h5>
+      <h2>${this.make} ${this.model}</h2>
+      <h6>Year: ${this.year}</h6>
+      <h6>Price: ${this.price}</h6>
       <img class="img-fluid" src="${this.imgUrl}" />
       <button type="button" class="btn btn-danger btn-block" onclick="app.carController.delete('${this.id}')">Delete</button>
       <button type="button" class="btn btn-success btn-block" onclick="app.carController.bid('${this.id}')">Bid</button>

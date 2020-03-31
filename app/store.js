@@ -3,18 +3,18 @@ import Car from "./Models/Car.js";
 import House from "./Models/House.js"
 
 let _state = {
-  activeValue: new Value({ title: "Value" }),
-  /** @type {Value[]} */
-  values: [],
   /** @type {Car[]} */
-  cars: []
+    cars: [],
+  /** @type {House[]} */
+    houses: [],
 };
 
 /** Collection of listeners to be called based on keyed state changes
  * @type {{[x:string]: function[]}}
  */
 let _listeners = {
-  cars: []
+  cars: [],
+  houses: [],
 };
 
 /**

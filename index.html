@@ -108,10 +108,20 @@
                   </div>
                   <div class="modal-body">
                       <form class="container-fluid" onsubmit="app.houseController.create(event)">
+                        <div class="form-group">
+                            <label for="beds"></label>
+                            <input type="number" min="0" name="beds" class="form-control"
+                                placeholder="Enter Number of Bedrooms here..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="baths"></label>
+                            <input type="number" min="0" name="baths" class="form-control"
+                                placeholder="Enter Number of Bathrooms here..." required>
+                        </div>
                           <div class="form-group">
-                              <label for="address"></label>
-                              <input type="text" name="address" class="form-control"
-                                  placeholder="Enter Address here..." required>
+                              <label for="levels"></label>
+                              <input type="number" name="levels" class="form-control"
+                                  placeholder="Enter Number of Levels here..." required>
                           </div>
                           <div class="form-group">
                               <label for="price"></label>
@@ -119,15 +129,11 @@
                                   placeholder="Enter Price here..." required>
                           </div>
                           <div class="form-group">
-                              <label for="beds"></label>
-                              <input type="number" min="0" name="beds" class="form-control"
-                                  placeholder="Enter Number of Bedrooms here..." required>
-                          </div>
-                          <div class="form-group">
-                              <label for="baths"></label>
-                              <input type="number" min="0" name="baths" class="form-control"
-                                  placeholder="Enter Number of Bathrooms here..." required>
-                          </div>
+                            <label for="year"></label>
+                            <input type="number" min="0" name="year" class="form-control"
+                                placeholder="Enter Year here..." required>
+                        </div>
+
                           <div class="form-group">
                               <label for="description"></label>
                               <textarea placeholder="Enter description here..." name="description" cols="30"

@@ -1,22 +1,25 @@
 export default class House {
   constructor(data) {
-    this.address = data.address
-    this.price = data.price
-    this.beds = data.beds
-    this.baths = data.baths
+    this.id = data.id || data._id
     this.imgUrl = data.imgUrl
+    this.beds = data.bedrooms
+    this.baths = data.bathrooms
+    this.year = data.year
+    this.price = data.price
+    this.levels = data.levels
     this.description = data.description || "No description provided."
   }
 
-  getTemplate(index) {
+  get Template() {
     return /*html*/ `
     <div class="col-4 border border-info rounded shadow">
-      <h1>Address: ${this.address}</h1>
-      <h5>Price: ${this.price}</h5>
-      <h5>Bedrooms: ${this.beds}</h5>
-      <h5>Bathrooms: ${this.baths}</h5>
       <img class="img-fluid" src="${this.imgUrl}" />
-      <button class="btn btn-danger btn-block" onclick="app.houseController.delete(${index})">Delete</button>
+      <h5>${this.beds} Bed/${this.baths} Bath</h5>
+      <h6>${this.year} ${this.levels} Level Home</h6>
+      <h6>$${this.price}</h6>
+      <h6>${this.description}</h6>
+      <button class="btn btn-danger btn-block" onclick="app.houseController.delete('${this.id}')">Delete</button>
+      <button type="button" class="btn btn-success btn-block" onclick="app.houseController.bid('${this.id}')">Bid</button>
     </div>`
   }
 
